@@ -1,0 +1,32 @@
+= simple CA
+
+Passwordless, Creates Intermediate CAs
+
+Good for class.  Creates a second intermediate CA to replace your first one with.  Great for labs.
+
+= howto
+
+== Clone Repo
+```
+git clone https://github.com/newgoliath/certs
+cd certs
+```
+
+== Create Root CA and Intermediate CA in one command
+```
+./ca_create.sh
+```
+.Root CA cert location `./ca/certs/ca.cert.pem`
+.Root CA key location `./ca/private/ca.key.pem`
+.Intermediate CA cert location `./ca/intermediate/certs/intermediate.cert.pem`
+.Intermediate CA key location `./ca/intermediate/private/ca.key.pem`
+
+== Create the Server certs that you need
+
+```
+./create_env_certs.sh -g [GUID] -h [fqnd of extra domains] -o [output directory for new certs]
+```
+
+(c) 2017, Judd Maltin for Red Hat, Inc.
+
+Apache 2.0 License
