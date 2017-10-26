@@ -1,6 +1,6 @@
-= simple CA
+= simple CA for OpenTLC
 
-Passwordless, Creates Intermediate CAs
+Passwordless, Creates Intermediate CAs - all branded Red Hat GPTE DevOps
 
 Good for class.  Creates a second intermediate CA to replace your first one with.  Great for labs.
 
@@ -16,10 +16,10 @@ cd certs
 ```
 ./ca_create.sh
 ```
-.Root CA cert location `./ca/certs/ca.cert.pem`
-.Root CA key location `./ca/private/ca.key.pem`
-.Intermediate CA cert location `./ca/intermediate/certs/intermediate.cert.pem`
-.Intermediate CA key location `./ca/intermediate/private/ca.key.pem`
+* Root CA cert location `./ca/certs/ca.cert.pem`
+* Root CA key location `./ca/private/ca.key.pem`
+* Intermediate CA cert location `./ca/intermediate/certs/intermediate.cert.pem`
+* Intermediate CA key location `./ca/intermediate/private/ca.key.pem`
 
 == Create the Server certs that you need
 
