@@ -11,11 +11,9 @@
 # -h accept comma delimited hostnames (hostname or fqdn) NO SPACES for all named certs.
 # -o output path
 
-GUID="judd1"
+GUID="testguid"
 DOMAINNAME="example.opentlc.com"
-GUID_DOMAIN="${GUID}.${DOMAINNAME}"
-OUT_PATH="/tmp/"
-HOSTNAMES="master1,anotherdomain.example.com"
+OUT_PATH="./ca/intermediate/newcerts/"
 
 while getopts ":d:o:g:h:" opt ; do
 	case $opt in
@@ -24,7 +22,7 @@ while getopts ":d:o:g:h:" opt ; do
 			DOMAINNAME="${OPTARG}"
       		;;
 		g)
-			echo "GUID ${OPTARG}"
+			echo "GUID = ${OPTARG}"
 			GUID="${OPTARG}"
       		;;
 		o)
@@ -33,10 +31,11 @@ while getopts ":d:o:g:h:" opt ; do
 			;;
 		h)
 			echo "HOSTNAMES = $OPTARG" >&2
-			HOSTNAMES="${OUT_PATH}"
+			HOSTNAMES="${OPTARG}"
 		;;
 	esac
 done
+
 
 ##################
 # VALIDATE VARIABLES
@@ -62,7 +61,7 @@ then
     fi
 fi
 GUID_DOMAIN="${GUID}.${DOMAINNAME}"
-HOSTNAMES="*.apps.${GUID_DOMAIN},loadbalancer.${GUID_DOMAIN},${HOSTNAMES}"
+HOSTNAMES="${HOSTNAMES},certtest.${GUID}.example.opentlc.com"
 IFS=',' read -r -a HOSTNAMES_A <<< "${HOSTNAMES}"
 
 ##################
