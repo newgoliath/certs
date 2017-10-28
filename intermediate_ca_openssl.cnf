@@ -75,7 +75,7 @@ stateOrProvinceName             = North Carolina
 localityName                    = Raleigh
 0.organizationName              = Red Hat, Inc.
 organizationalUnitName          = GPTE DevOps
-commonName                      = Red Hat OpenTLC Classroom Intermediate 2 CA
+commonName                      = Red Hat OpenTLC Classroom Intermediate CA
 emailAddress                    = gpte-devops-automation@redhat.com
 
 [ v3_ca ]
