@@ -59,7 +59,7 @@ openssl req -config ${DIR}/intermediate_ca_openssl.cnf -new -sha256 \
 
 echo --- creating the intermediate CERT
 openssl ca -config ${DIR}/root_ca_openssl.cnf -extensions v3_intermediate_ca \
-      -days 3650 -notext -md sha256 \
+      -days 3650 -notext -md sha256 -batch \
       -in ${INTER_DIR}/csr/intermediate.csr.pem \
       -out ${INTER_DIR}/certs/intermediate.cert.pem
       #-passin pass:intermed_csr \
