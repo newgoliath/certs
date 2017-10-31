@@ -61,7 +61,7 @@ then
     fi
 fi
 GUID_DOMAIN="${GUID}.${DOMAINNAME}"
-HOSTNAMES="${HOSTNAMES},certtest.${GUID}.example.opentlc.com"
+HOSTNAMES="${HOSTNAMES},certtest.${GUID}.example.opentlc.com,*.apps.${GUID}.example.opentlc.com"
 IFS=',' read -r -a HOSTNAMES_A <<< "${HOSTNAMES}"
 
 ##################
