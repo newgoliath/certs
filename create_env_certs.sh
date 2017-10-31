@@ -61,7 +61,7 @@ then
     fi
 fi
 GUID_DOMAIN="${GUID}.${DOMAINNAME}"
-HOSTNAMES="${HOSTNAMES},certtest.${GUID}.example.opentlc.com,*.apps.${GUID}.example.opentlc.com"
+HOSTNAMES="${HOSTNAMES},certtest.${GUID_DOMAIN},*.apps.${GUID_DOMAIN}"
 IFS=',' read -r -a HOSTNAMES_A <<< "${HOSTNAMES}"
 
 ##################
@@ -74,7 +74,7 @@ touch ca/intermediate/index.txt
 
 for SERVER_NAME in "${HOSTNAMES_A[@]}"
 do
-
+    [[ -z ${SERVER_NAME} ]] && next
     export cn="${SERVER_NAME}"
 
     # turn * into word "wildcard"
