@@ -10,6 +10,10 @@ cd ${DIR}
 # make the basics
 echo --- preparing environment
 CA_DIR=${DIR}/ca
+if [[ -d ${CA_DIR} ]]; then
+	echo "CA already exists, stopping.  \nIf you really want to regerate everything, execute 'rm -rf ./ca/' to start afresh."
+	exit 0;
+fi
 mkdir -p ${CA_DIR}/certs ${CA_DIR}/crl ${CA_DIR}/newcerts ${CA_DIR}/private
 chmod 700 ${CA_DIR}/private
 touch ${CA_DIR}/index.txt
