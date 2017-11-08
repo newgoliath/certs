@@ -74,7 +74,7 @@ touch ca/intermediate/index.txt
 
 for SERVER_NAME in "${HOSTNAMES_A[@]}"
 do
-    [[ -z ${SERVER_NAME} ]] && next
+    [[ -z ${SERVER_NAME} ]] && continue
     export cn="${SERVER_NAME}"
 
     # turn * into word "wildcard"
